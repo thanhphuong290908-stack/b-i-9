@@ -121,53 +121,43 @@
 </p>
 </div>
 
-<pre>
-def generate_html_table(data):
-    html_content = "&lt;table style=\"border-collapse: collapse;\"&gt;"
-    # Thêm tiêu đề cho bảng
+<pre><code>def generate_html_table(data):
+    html_content = "&lt;table style='border-collapse: collapse;'&gt;"
     html_content += "&lt;tr&gt;"
-    html_content += "&lt;th style=\"border: 2px solid blue;\"&gt;Họ tên&lt;/th&gt;"
-    html_content += "&lt;th style=\"border: 2px solid blue;\"&gt;Điểm Toán&lt;/th&gt;"
-    html_content += "&lt;th style=\"border: 2px solid blue;\"&gt;Điểm Vật lí&lt;/th&gt;"
-    html_content += "&lt;th style=\"border: 2px solid blue;\"&gt;Điểm Hóa học&lt;/th&gt;"
+    html_content += "&lt;th style='border: 2px solid blue;'&gt;Họ tên&lt;/th&gt;"
+    html_content += "&lt;th style='border: 2px solid blue;'&gt;Điểm Toán&lt;/th&gt;"
+    html_content += "&lt;th style='border: 2px solid blue;'&gt;Điểm Vật lí&lt;/th&gt;"
+    html_content += "&lt;th style='border: 2px solid blue;'&gt;Điểm Hóa học&lt;/th&gt;"
     html_content += "&lt;/tr&gt;"
 
-    # Thêm dữ liệu từ list data vào bảng
     for row in data:
         html_content += "&lt;tr&gt;"
         for value in row:
-            html_content += f"&lt;td style=\"border: 2px solid black;\"&gt;{value}&lt;/td&gt;"
+            html_content += f"&lt;td style='border: 2px solid black;'&gt;{value}&lt;/td&gt;"
         html_content += "&lt;/tr&gt;"
 
     html_content += "&lt;/table&gt;"
     return html_content
 
-# Dữ liệu ban đầu
 initial_data = [
     ["Họ tên", "Điểm Toán", "Điểm Vật lí", "Điểm Hóa học"],
     ["Nguyễn Văn A", "8.5", "7.0", "9.0"],
     ["Trần Thị B", "7.0", "8.0", "8.5"]
 ]
 
-# Dữ liệu mới cần bổ sung
 new_data = [
     ["Lê Quang C", "6.5", "7.5", "8.0"],
     ["Phạm Thị D", "9.0", "8.5", "7.5"]
 ]
 
-# Kết hợp dữ liệu cũ và mới
 combined_data = initial_data + new_data
 
-# Tạo nội dung HTML cho bảng dữ liệu
 html_content = generate_html_table(combined_data)
 
-# Lưu nội dung HTML vào tệp
 with open("data_table.html", "w") as file:
     file.write(html_content)
 
-print("Tạo tệp HTML thành công!")
-</pre>
-
+print("Tạo tệp HTML thành công!")</code></pre>
 
      </div>
 
